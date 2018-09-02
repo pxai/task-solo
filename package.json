@@ -1,0 +1,27 @@
+{
+  "name": "task-solo",
+  "version": "1.0.0",
+  "description": "Simple task management tool for console",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha test/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pxai"
+  },
+  "keywords": [
+    "Task",
+    "todo",
+    "board",
+    "solo"
+  ],
+  "author": "Pello Xabier Altadill IZura",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^5.5.0",
+    "mocha": "^5.2.0",
+    "sinon": "^6.2.0"
+  }
+}
