@@ -26,6 +26,16 @@ class Task {
   get changedAt () {
     return this._changedAt;  
   }
+
+  done () {
+    this._status = 1;
+    this._changedAt = new Date();
+  }
+
+  undone () {
+    this._status = 0;
+    this._changedAt = new Date();
+  }
 }
 
 module.exports = Task;

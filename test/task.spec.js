@@ -20,4 +20,27 @@ describe("Task Object", () => {
     expect(task.todo).to.equal("Important task");
     expect(task.status).to.equal(0);
   });
+
+  context("done/undone", () => {
+    let task;
+
+    beforeEach() {
+      task = new Task("Important task");
+    };
+
+    it("should change status when done", () => {
+      task.done();
+
+      expect(task.status).to.equal(1);
+      expect(task.changedAt).to.equal(null);
+    });
+
+    it("should change when undone", () => {
+     task.done();
+     task.undone();
+
+      expect(task.status).to.equal(0);
+      expect(task.changedAt).to.equal(null);
+    });
+  });
 });
