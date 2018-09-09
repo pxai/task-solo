@@ -24,15 +24,15 @@ describe("Task Object", () => {
   context("done/undone", () => {
     let task;
 
-    beforeEach() {
+    beforeEach(() => {
       task = new Task("Important task");
-    };
+    });
 
     it("should change status when done", () => {
       task.done();
 
       expect(task.status).to.equal(1);
-      expect(task.changedAt).to.equal(null);
+      expect(task.changedAt).to.not.equal(null);
     });
 
     it("should change when undone", () => {
@@ -40,7 +40,6 @@ describe("Task Object", () => {
      task.undone();
 
       expect(task.status).to.equal(0);
-      expect(task.changedAt).to.equal(null);
     });
   });
 });
