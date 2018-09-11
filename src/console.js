@@ -2,6 +2,7 @@ const readline = require("readline");
 
 class Console {
   constructor() {
+    this.init();
   }  
 
   init () {
@@ -11,9 +12,9 @@ class Console {
     });
   }
 
-  read (question = "") {
+  read (questionText = "") {
     return new Promise((resolve) => {
-          this._readLine.question(question, (data) => { resolve(data) })
+          this._readLine.question(questionText, (data) => resolve(data))
     });
   }
 }
