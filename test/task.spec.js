@@ -16,7 +16,7 @@ describe("Task Object", () => {
   it("should have initial data", () => {
     const task = new Task("Important task");
 
-    expect(task.id).to.match(/[0-9]+/);
+    expect(task.id).to.match(/[a-zA-Z0-9]{32}/);
     expect(task.todo).to.equal("Important task");
     expect(task.status).to.equal(0);
   });

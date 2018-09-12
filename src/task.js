@@ -1,7 +1,9 @@
+const UUID = require("./uuid");
+
 class Task {
   constructor (todo) {
     this._todo = todo;
-    this._id = Math.round(Math.random());
+    this._id = UUID.generate(); 
     this._status = 0;
     this._createdAt = new Date();
     this._changedAt = null;
