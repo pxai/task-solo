@@ -11,4 +11,16 @@ describe("Colors", () => {
     const colors = new Colors();
 
   });
+
+  describe("test print colors", () => {
+    let colors; 
+
+    beforeEach(() => {
+      colors = new Colors();
+    });
+
+    it("should write on console in white", () => {
+      expect(colors.printWhite("Hello")).to.equal("Hello"); 
+    });
+  });
 });
