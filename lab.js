@@ -1,9 +1,9 @@
 const Console = require("./src/console");
-const console = new Console();
+const input = new Console();
 
-const answer = console.read("Tell me something"); 
+const answer = input.read("Tell me something"); 
 
-console.read("And something else:").then( data => {
+input.read("And something else:").then( data => {
   console.log("You added: ", data);
   console.log("And answer again: ", answer);
 });
