@@ -12,7 +12,7 @@ class Console {
     });
   }
 
-  read (questionText = "") {
+  async read (questionText = "") {
     return new Promise((resolve) => {
           this._readLine.question(questionText, (data) => resolve(data))
     });
