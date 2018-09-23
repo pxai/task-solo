@@ -7,7 +7,7 @@ const answer = "";
 input.read("And something else:").then( data => {
   console.log("You added: ", data);
   console.log("And answer again: ", answer);
-  return;
+  input.close();
 });
 
 console.log("Ansser:", answer);

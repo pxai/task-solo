@@ -14,8 +14,15 @@ class Console {
 
   async read (questionText = "") {
     return new Promise((resolve) => {
-          this._readLine.question(questionText, (data) => resolve(data))
+          this._readLine.question(questionText, (data) => {
+            return resolve(data);
+          });
     });
+  }
+
+  close () {
+    console.log(this._readline);
+    this._readline.close();
   }
 }
 
