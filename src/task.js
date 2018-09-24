@@ -1,8 +1,8 @@
 const UUID = require("./uuid");
 
 class Task {
-  constructor (todo) {
-    this._todo = todo;
+  constructor (description) {
+    this._description = description;
     this._id = UUID.generate(); 
     this._status = 0;
     this._createdAt = new Date();
@@ -13,8 +13,8 @@ class Task {
     return this._id;
   }
 
-  get todo () {
-    return this._todo;
+  get description () {
+    return this._description;
   }
 
   get status () {
@@ -29,13 +29,18 @@ class Task {
     return this._changedAt;  
   }
 
-  done () {
+  todo () {
+    this._status = 0; 
+    this._changedAt = new Date();
+  }
+  
+  doing () {
     this._status = 1;
     this._changedAt = new Date();
   }
-
-  undone () {
-    this._status = 0;
+  
+  done () {
+    this._status = 2;
     this._changedAt = new Date();
   }
 }
