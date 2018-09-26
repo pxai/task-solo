@@ -1,12 +1,13 @@
 const Console = require("./src/console");
+const Menu = require("./src/menu");
+
 const input = new Console();
+const menu = new Menu();
 
 const answer = "";
 
-while (true) {
-  input.read("And something else:").then( data => {
+  input.read(menu.show()).then( data => {
     console.log("You added: ", data);
   });
-}
 
 console.log("Ansser:", answer);
