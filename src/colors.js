@@ -32,8 +32,24 @@ class Colors {
     return content;
   }
 
-  printWhite (content) {
+  white (content) {
     return `${this.colors.FgWhite}${content}${this.colors.Reset}`;
+  }
+  
+  yellow (content) {
+    return `${this.colors.FgYellow}${content}${this.colors.Reset}`;
+  }
+
+  orange (content) {
+    return `${this.colors.FgMagenta}${content}${this.colors.Reset}`;
+  }
+
+  red (content) {
+    return `${this.colors.FgRed}${content}${this.colors.Reset}`;
+  }
+  
+  green (content) {
+    return `${this.colors.FgrGreen}${content}${this.colors.Reset}`;
   }
 }
 
