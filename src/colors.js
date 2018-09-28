@@ -49,7 +49,7 @@ class Colors {
   }
   
   green (content) {
-    return `${this.colors.FgrGreen}${content}${this.colors.Reset}`;
+    return `${this.colors.FgGreen}${content}${this.colors.Reset}`;
   }
 }
 

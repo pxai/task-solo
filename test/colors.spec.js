@@ -28,19 +28,19 @@ describe("Colors", () => {
     });
     
     it("should write on console in yellow", () => {
-      expect(colors.yellow("Hello")).to.equal("\u001b[37mHello\u001b[0m"); 
+      expect(colors.yellow("Hello")).to.equal("\u001b[33mHello\u001b[0m"); 
     });
 
     it("should write on console in orange", () => {
-      expect(colors.orange("Hello")).to.equal("\u001b[37mHello\u001b[0m"); 
+      expect(colors.orange("Hello")).to.equal("\u001b[35mHello\u001b[0m"); 
     });
     
     it("should write on console in green", () => {
-      expect(colors.green("Hello")).to.equal("\u001b[37mHello\u001b[0m"); 
+      expect(colors.green("Hello")).to.equal("\u001b[32mHello\u001b[0m"); 
     });
     
     it("should write on console in red", () => {
-      expect(colors.red("Hello")).to.equal("\u001b[37mHello\u001b[0m"); 
+      expect(colors.red("Hello")).to.equal("\u001b[31mHello\u001b[0m"); 
     });
   });
 });
