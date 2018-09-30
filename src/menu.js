@@ -15,6 +15,10 @@ class Menu {
       if (data != 0) { this.menu(); }
     });
   }
+
+  clear () {
+    process.stdout.write('\x1B[2J\x1B[0f');
+  }
 }
 
 module.exports = Menu;
