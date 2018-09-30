@@ -6,8 +6,5 @@ const menu = new Menu();
 
 const answer = "";
 
-  input.read(menu.show()).then( data => {
-    console.log("You added: ", data);
-  });
-
+menu.menu();
 console.log("Ansser:", answer);
