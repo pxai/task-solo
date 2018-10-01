@@ -36,5 +36,37 @@ describe("Task List", () => {
     expect(taskList.length).to.equal(1);
   });
 
+  it("should return todo elements", () => {
+    taskList.add(new Task("Do this"));
+    taskList.add(new Task("Do that"));
+
+    expect(taskList.todos().length).to.equal(2);
+  });
+  
+  it("should return doing elements", () => {
+    let task1 = new Task("Do this");
+    task1.doing();
+    
+    let task2 = new Task("Do that");
+    task2.doing();
+  
+    taskList.add(task1);
+    taskList.add(task2);
+
+    expect(taskList.doings().length).to.equal(2);
+  });
+  
+  it("should return done elements", () => {
+    let task1 = new Task("Do this");
+    task1.done();
+    
+    let task2 = new Task("Do that");
+    task2.done();
+  
+    taskList.add(task1);
+    taskList.add(task2);
+
+    expect(taskList.dones().length).to.equal(2);
+  });
  });
 });

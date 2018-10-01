@@ -24,6 +24,18 @@ class TaskList {
     let tasks = this._tasks.filter(task => task.id !== taskId);
     this._tasks = tasks;
   }
+
+  todos () {
+    return this._tasks.filter(task => task.status === 0);
+  }
+
+  doings () {
+    return this._tasks.filter(task => task.status === 1);
+  }
+  
+  dones () {
+    return this._tasks.filter(task => task.status === 2);
+  }
 }
 
 module.exports = TaskList;
