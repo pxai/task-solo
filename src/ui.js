@@ -1,6 +1,6 @@
 class UI {
-  constructor () {
-  }  
+    constructor () {
+    }  
 }
 
 module.exports = UI;
