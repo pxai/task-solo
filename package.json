@@ -4,6 +4,7 @@
   "description": "Simple task management tool for console",
   "main": "src/index.js",
   "scripts": {
+    "pre-test": "eslint src/**/*.js test/**/*.js",
     "test": "mocha test/**/*.spec.js"
   },
   "repository": {
