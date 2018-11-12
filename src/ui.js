@@ -1,9 +1,12 @@
+const Menu = require("./menu");
+
 class UI {
     constructor () {
-    }  
+      this._menu = new Menu();
+    }
 
     start () {
-        console.log("Task Solo");
+      this._menu.menu();
     }
 }
 

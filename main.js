@@ -1,8 +1,8 @@
-const Menu = require("./src/menu");
+const UI = require("./src/ui");
 
-const menu = new Menu();
+const ui = new UI();
 
 const answer = "";
 
-menu.menu();
+ui.start();
 console.log("Ansser:", answer);
