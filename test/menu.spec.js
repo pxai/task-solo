@@ -4,12 +4,12 @@ const Menu = require("../src/menu");
 
 describe("Menu Object", () => {
     it("exists a menu object",() => {
-        expect(Menu).to.exist;  
+        expect(Menu).to.exist;
     });
 
-    it("should have a constructor", () => {
+    it("should have a constructor", async () => {
         const menu = new Menu();
 
-        expect(menu.show()).to.equal("Choose: 1.Add | 2.Change | 3.Delete");
+        return expect(await menu.show()).to.equal("Choose: 1.Add | 2.Change | 3.Delete | 4.Exit");
     });
 });
