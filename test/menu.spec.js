@@ -7,9 +7,9 @@ describe("Menu Object", () => {
         expect(Menu).to.exist;
     });
 
-    it("should have a constructor", async () => {
+    it("should have a constructor", () => {
         const menu = new Menu();
 
-        return expect(await menu.show()).to.equal("Choose: 1.Add | 2.Change | 3.Delete | 4.Exit");
+        expect(menu.show()).to.equal("Choose: 1.Add | 2.Change | 3.Delete | 4.Exit");
     });
 });
