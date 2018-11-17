@@ -5,6 +5,8 @@ const UI = require("../src/ui");
 require("mocha-sinon");
 
 describe("UI Object", () => {
+    const consoleBackup = console;
+
     it("exists a ui object",() => {
         expect(UI).to.exist;
     });
@@ -13,16 +15,20 @@ describe("UI Object", () => {
         const ui = new UI();
     });
 
-    describe("Output", () => {
+    describe.skip("Output", () => {
         beforeEach(() => {
             sinon.stub(console, "log").callsFake( () => log.apply(log, arguments));
         });
 
-        it("should show a message when started", () => {
+        afterEach(() => {
+          console = consoleBackup;
+          console.log("After each");
+        });
+        it("should show a message when started", (done) => {
             const ui = new UI();
-//            ui.start();
-
-            expect(console.log.calledOnce).to.be.true;
+            ui.start().then(() => {
+                return expect(console.log.calledOnce).to.be.true;
+            });
         });
     });
 });
