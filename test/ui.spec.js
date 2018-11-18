@@ -15,7 +15,7 @@ describe("UI Object", () => {
         const ui = new UI();
     });
 
-    describe.skip("Output", () => {
+    describe("Output", () => {
         beforeEach(() => {
             sinon.stub(console, "log").callsFake( () => log.apply(log, arguments));
         });
@@ -24,10 +24,18 @@ describe("UI Object", () => {
           console = consoleBackup;
           console.log("After each");
         });
-        it("should show a message when started", (done) => {
+
+        it("should show a message when started", () => {
             const ui = new UI();
+            const stdin = require("mock-stdin").stdin();
+
+            process.nextTick(() => {
+                stdin.send("4\n");
+            });
+
             ui.start().then(() => {
-                return expect(console.log.calledOnce).to.be.true;
+                expect(console.log.calledOnce).to.be.true;
+                process.exit();
             });
         });
     });

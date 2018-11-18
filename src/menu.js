@@ -10,10 +10,15 @@ class Menu {
     }
 
     menu () {
+      return new Promise((resolve) => {
         this.input.read(this.show()).then( data => {
-            console.log("You added: ", data);
-            if (data != 0) { this.menu(); }
+            if (data != 4) {
+                resolve(0);
+            } else {
+                this.menu();
+            }
         });
+      });
     }
 
     clear () {
