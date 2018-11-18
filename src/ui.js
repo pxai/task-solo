@@ -1,12 +1,12 @@
 const Menu = require("./menu");
 
 class UI {
-    constructor () {
-      this._menu = new Menu();
+    constructor (menu) {
+      this._menu = menu || new Menu();
     }
 
     start () {
-      this._menu.menu();
+      return this._menu.menu();
     }
 }
 

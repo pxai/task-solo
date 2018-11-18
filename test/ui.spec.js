@@ -1,8 +1,9 @@
 const chai = require("chai");
 const sinon = require("sinon");
+const sinonChai = require("sinon-chai");
 const expect = chai.expect;
 const UI = require("../src/ui");
-require("mocha-sinon");
+chai.use(sinonChai);
 
 describe("UI Object", () => {
     const consoleBackup = console;
@@ -16,26 +17,13 @@ describe("UI Object", () => {
     });
 
     describe("Output", () => {
-        beforeEach(() => {
-            sinon.stub(console, "log").callsFake( () => log.apply(log, arguments));
-        });
-
-        afterEach(() => {
-          console = consoleBackup;
-          console.log("After each");
-        });
-
         it("should show a message when started", () => {
-            const ui = new UI();
-            const stdin = require("mock-stdin").stdin();
+            const menu = {};
+            menu.menu = sinon.stub().returns(Promise.resolve({}));
+            const ui = new UI(menu);
 
-            process.nextTick(() => {
-                stdin.send("4\n");
-            });
-
-            ui.start().then(() => {
-                expect(console.log.calledOnce).to.be.true;
-                process.exit();
+            return ui.start().then(() => {
+                expect(menu.menu).to.have.been.calledOnce;
             });
         });
     });

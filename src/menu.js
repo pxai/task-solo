@@ -12,8 +12,9 @@ class Menu {
     menu () {
       return new Promise((resolve) => {
         this.input.read(this.show()).then( data => {
-            if (data != 4) {
+            if (data == "4") {
                 resolve(0);
+//                process.exit();
             } else {
                 this.menu();
             }
