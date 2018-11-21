@@ -9,6 +9,18 @@ class Menu {
         return "Choose: 1.Add | 2.Change | 3.Delete | 4.Quit";
     }
 
+    add () {
+        return "Please enter a task: ";
+    }
+
+    change () {
+        return "Task number to change: ";
+    }
+
+    remove () {
+        return "Task number to remove: ";
+    }
+
     menu () {
       return new Promise((resolve) => {
         this.input.read(this.show()).then( data => {
