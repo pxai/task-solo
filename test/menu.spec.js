@@ -28,4 +28,8 @@ describe("Menu Object", () => {
     it("should show text to enter task number to change", () => {
         expect(menu.change()).to.equal("Task number to change: ");
     });
+
+    it("should say good bye", () => {
+        expect(menu.bye()).to.equal("Thanks for using Task-Solo!");
+    });
 });

@@ -21,6 +21,10 @@ class Menu {
         return "Task number to remove: ";
     }
 
+    bye () {
+        return "Thanks for using Task-Solo!";
+    }
+
     menu () {
       return new Promise((resolve) => {
         this.input.read(this.show()).then( data => {
