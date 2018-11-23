@@ -1,12 +1,18 @@
 const Console = require("./console");
 
 class Menu {
-    constructor () {
+    constructor (content = "" , commands = {}) {
         this.input = new Console();
+        this.content = content;
+        this.commands = commands || {
+            "1": this.add,
+            "2": this.change,
+            "3": this.remove
+        };
     }
 
     show () {
-        return "Choose: 1.Add | 2.Change | 3.Delete | 4.Quit";
+        return this.content + "\nChoose: 1.Add | 2.Change | 3.Delete | 4.Quit";
     }
 
     add () {
@@ -32,10 +38,19 @@ class Menu {
                 resolve(0);
 //                process.exit();
             } else {
+                this.tryToExec(data);
                 this.menu();
             }
         });
       });
+    }
+
+    tryToExec (command) {
+        if (this.commands[command]) {
+            this.commands[command]();
+        }
+
+        return "Command not found";
     }
 
     clear () {

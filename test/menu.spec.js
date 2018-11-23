@@ -13,8 +13,12 @@ describe("Menu Object", () => {
         expect(Menu).to.exist;
     });
 
-    it("should have a constructor", () => {
-        expect(menu.show()).to.equal("Choose: 1.Add | 2.Change | 3.Delete | 4.Quit");
+    it("should show a menu with content", () => {
+        expect(menu.show()).to.equal("\nChoose: 1.Add | 2.Change | 3.Delete | 4.Quit");
+
+        menu = new Menu("This is content");
+
+        expect(menu.show()).to.equal("This is content\nChoose: 1.Add | 2.Change | 3.Delete | 4.Quit");
     });
 
     it("should show text to enter new", () => {
