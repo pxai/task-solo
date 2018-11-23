@@ -32,17 +32,17 @@ class Menu {
     }
 
     menu () {
-      return new Promise((resolve) => {
-        this.input.read(this.show()).then( data => {
-            if (data == "4") {
-                resolve(0);
-//                process.exit();
-            } else {
-                this.tryToExec(data);
-                this.menu();
-            }
+        return new Promise((resolve) => {
+            this.input.read(this.show()).then( data => {
+                if (data == "4") {
+                    resolve(0);
+                    //                process.exit();
+                } else {
+                    this.tryToExec(data);
+                    this.menu();
+                }
+            });
         });
-      });
     }
 
     tryToExec (command) {
