@@ -20,7 +20,7 @@ describe("Console", () => {
         });
 
         return consol.read("who are you").then( (response) => {
-          expect(response).to.equal("I'm Batman");
+            expect(response).to.equal("I'm Batman");
         });
     });
 });
