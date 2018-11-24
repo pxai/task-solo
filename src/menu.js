@@ -1,7 +1,7 @@
 const Console = require("./console");
 
 class Menu {
-    constructor (content = "" , commands = {}) {
+    constructor (content = "show a menu with content" , commands = {}) {
         this.input = new Console();
         this.content = content;
         this.commands = commands || {
