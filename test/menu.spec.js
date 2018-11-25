@@ -14,7 +14,7 @@ describe("Menu Object", () => {
     });
 
     it("should show a menu with content", () => {
-        expect(menu.show()).to.equal("\nChoose: 1.Add | 2.Change | 3.Delete | 4.Quit");
+        expect(menu.show()).to.equal("\nChoose: 1.Add | 2.Change | 3.Delete | 4.Quit\n");
 
         menu = new Menu("This is content");
 

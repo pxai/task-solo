@@ -12,7 +12,7 @@ class Menu {
     }
 
     show () {
-        return this.content + "\nChoose: 1.Add | 2.Change | 3.Delete | 4.Quit";
+        return this.content + "\nChoose: 1.Add | 2.Change | 3.Delete | 4.Quit\n";
     }
 
     add () {
@@ -38,14 +38,14 @@ class Menu {
                     resolve(0);
                     //                process.exit();
                 } else {
-                    this.tryToExec(data);
-                    this.menu();
+                    resolve(data);
                 }
             });
         });
     }
 
     tryToExec (command) {
+        console.log("Trying to exec: ", command);
         if (this.commands[command]) {
             this.commands[command]();
         }

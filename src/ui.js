@@ -6,7 +6,15 @@ class UI {
     }
 
     start () {
-        return this._menu.menu();
+        this.process(this._menu.menu());
+    }
+
+    process (command) {
+        if (command !== "4") {
+            this._menu.tryToExec(command);
+        } else {
+            this._menu.menu();
+        }
     }
 }
 
