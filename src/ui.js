@@ -5,8 +5,8 @@ class UI {
         this._menu = menu || new Menu();
     }
 
-    start () {
-        this.process(this._menu.menu());
+    async start () {
+        this.process(await this._menu.menu());
     }
 
     process (command) {
