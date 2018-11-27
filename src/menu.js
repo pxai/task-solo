@@ -1,7 +1,7 @@
 const Console = require("./console");
 
 class Menu {
-    constructor (content = "show a menu with content" , commands = {}) {
+    constructor (content = "show a menu with content" , commands = null) {
         this.input = new Console();
         this.content = content;
         this.commands = commands || {
@@ -45,9 +45,10 @@ class Menu {
     }
 
     tryToExec (command) {
-        console.log("Trying to exec: ", command);
+        console.log(`Trying to exec: :${command}:`);
         if (this.commands[command]) {
-            this.commands[command]();
+            console.log("executing: ", command);
+           this.commands[command]();
         }
 
         return "Command not found";
