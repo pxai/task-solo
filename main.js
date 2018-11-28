@@ -1,7 +1,11 @@
 const UI = require("./src/ui");
+const Console = require("./src/console");
 
-const ui = new UI();
+const input = new Console();
+// const ui = new UI();
 
-const answer = "";
+const answer = await input.read("say something");
+console.log("you wrote: ", answer);
 
-ui.start();
+// ui.start();
+
