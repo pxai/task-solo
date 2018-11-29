@@ -7,12 +7,20 @@ const input = new Console();
 // const answer = await input.read("say something");
 // input.read("jejeje").then( res => { console.log(res); });
 
-async function main () {
-  let res = await input.read("jejeje");
-  console.log(res);
+function notValid (result) {
+    return result === "";
 }
 
-main();
+async function add () {
+  let res = "";
+  do {
+    res = await input.read("Add something");
+  } while (notValid(res));
+
+  return res;
+}
+
+add();
 // console.log("you wrote: ", answer);
 
 // ui.start();
