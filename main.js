@@ -14,13 +14,24 @@ function notValid (result) {
 async function add () {
   let res = "";
   do {
-    res = await input.read("Add something");
+    res = await input.read("Add something: ");
   } while (notValid(res));
 
   return res;
 }
 
-add();
+// add();
+
+function addProm () {
+  input.read("Add something: ").then( res => {
+     if (notValid(res)) {
+        addProm();
+     }
+
+     return res;
+  });
+}
+addProm();
 // console.log("you wrote: ", answer);
 
 // ui.start();
