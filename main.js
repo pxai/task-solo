@@ -8,15 +8,16 @@ const input = new Console();
 // input.read("jejeje").then( res => { console.log(res); });
 
 function notValid (result) {
-    return result === "";
+    return result.trim() === "";
 }
 
 async function add () {
   let res = "";
   do {
     res = await input.read("Add something: ");
+    console.log(`res: #${res}# ${notValid(res)}`)
   } while (notValid(res));
-
+    console.log(`out: #${res}#`)
   return res;
 }
 
@@ -31,7 +32,7 @@ function addProm () {
      return res;
   });
 }
-addProm();
+add();
 // console.log("you wrote: ", answer);
 
 // ui.start();
