@@ -19,6 +19,10 @@ class Console {
             });
         });
     }
+
+    close () {
+        this._readLine.close();
+    }
 }
 
 module.exports = Console;

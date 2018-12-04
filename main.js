@@ -4,20 +4,23 @@ const Console = require("./src/console");
 const input = new Console();
 // const ui = new UI();
 
-// const answer = await input.read("say something");
-// input.read("jejeje").then( res => { console.log(res); });
 
 function notValid (result) {
     return result.trim() === "";
 }
 
+function isNotCancel (result) {
+    return result !== ".";
+}
+
 async function add () {
   let res = "";
+
   do {
     res = await input.read("Add something: ");
-    console.log(`res: #${res}# ${notValid(res)}`)
-  } while (notValid(res));
-    console.log(`out: #${res}#`)
+  } while (notValid(res) &&  isNotCancel(res));
+
+  console.log(res);
   return res;
 }
 
