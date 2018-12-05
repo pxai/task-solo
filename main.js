@@ -14,7 +14,7 @@ function isNotCancel (result) {
 }
 
 function notValidId(number, validNumbers) {
-    return validNumbers.includes(+number);
+    return !validNumbers.includes(+number);
 }
 
 async function add () {
@@ -32,10 +32,9 @@ async function readId (validNumbers) {
     let number = -1;
 
     do {
-      number = await input.read("Please insert a number");
+      number = await input.read("Please insert a number: ");
     } while (notValidId(number, validNumbers) && isNotCancel(number));
 
-    console.log(number);
     return number;
 }
 
@@ -57,8 +56,14 @@ function addProm () {
      return res;
   });
 }
-add();
-readId([1,2,3,4]);
+
+async function main () {
+    await add();
+    await readId([1,2,3,4]);
+    input.close();
+}
+
+main();
 // console.log("you wrote: ", answer);
 
 // ui.start();
