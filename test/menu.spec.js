@@ -18,7 +18,7 @@ describe("Menu Object", () => {
 
         menu = new Menu("This is content");
 
-        expect(menu.show()).to.equal("This is content\nChoose: 1.Add | 2.Change | 3.Delete | 4.Quit");
+        expect(menu.show()).to.equal("This is content\nChoose: 1.Add | 2.Change | 3.Delete | 4.Quit\n");
     });
 
     it("should show text to enter new", () => {

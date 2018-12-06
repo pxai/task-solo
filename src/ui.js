@@ -11,7 +11,7 @@ class UI {
 
     process (command) {
         if (command !== "4") {
-            this._menu.tryToExec(command);
+//            this._menu.tryToExec(command);
         } else {
             this._menu.menu();
         }

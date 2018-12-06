@@ -22,4 +22,30 @@ describe("Validator", () => {
 
     expect(validator.isEmpty("  ")).to.be.true;
   });
+
+  it("has a method to check if is not cancel char", () => {
+    const validator = new Validator();
+
+    expect(validator.isNotCancel(" ")).to.be.true;
+    expect(validator.isNotCancel("something")).to.be.true;
+
+    expect(validator.isNotCancel(".")).to.be.false;
+  });
+
+  it("can set cancel char through constructor param", () => {
+    const validator = new Validator("-");
+
+    expect(validator.isNotCancel(".")).to.be.true;
+    expect(validator.isNotCancel("something")).to.be.true;
+
+    expect(validator.isNotCancel("-")).to.be.false;
+  });
+
+  it("can check for existing id in array", () => {
+    const validator = new Validator("-");
+
+    expect(validator.isNotValidId(6, [1,3,2,3])).to.be.true;
+    expect(validator.isNotValidId(6, [])).to.be.true;
+    expect(validator.isNotValidId(2, [1,3,2,3])).to.be.false;
+  });
 });
