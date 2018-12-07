@@ -1,5 +1,5 @@
-const Validator = require("./src/validator");
-const Console = require("./src/console");
+const Validator = require("./validator");
+const Console = require("./console");
 const input = new Console();
 
 class Reader {
@@ -19,4 +19,4 @@ class Reader {
   }
 }
 
-module.export = Reader;
+module.exports = Reader;

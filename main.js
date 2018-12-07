@@ -1,6 +1,6 @@
 const UI = require("./src/ui");
 const Console = require("./src/console");
-
+const Validator = require("./src/validator");
 const input = new Console();
 // const ui = new UI();
 

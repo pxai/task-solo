@@ -11,7 +11,7 @@ describe("Reader", () => {
       const reader = new Reader();
    });
 
-   it("should read text from console", () => {
+   it("should read text from console", (done) => {
       const reader = new Reader();
       const stdin = require("mock-stdin").stdin();
 
@@ -21,6 +21,7 @@ describe("Reader", () => {
 
       return reader.readText("Please insert something").then( (response) => {
           expect(response).to.equal("I'm Batman");
+          done();
       });
    });
  });
