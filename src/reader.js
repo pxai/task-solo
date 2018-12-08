@@ -3,7 +3,8 @@ const Console = require("./console");
 const input = new Console();
 
 class Reader {
-   constructor () {
+   constructor (input = new Console()) {
+     this._input = input;
      this._validator = new Validator();
    }
 
@@ -11,10 +12,9 @@ class Reader {
     let res = "";
 
     do {
-      res = await input.read(promptMessage);
+      res = await this._input.read(promptMessage);
     } while (this._validator.notValid(res) &&  this._validator.isNotCancel(res));
 
-    console.log(res);
     return res;
   }
 }

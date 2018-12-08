@@ -1,5 +1,8 @@
 const chai = require("chai");
+const sinon = require("sinon");
+const sinonChai = require("sinon-chai");
 const expect = chai.expect;
+chai.use(sinonChai);
 const Reader = require("../src/reader");
 
 describe("Reader", () => {
@@ -11,17 +14,17 @@ describe("Reader", () => {
       const reader = new Reader();
    });
 
-   it("should read text from console", (done) => {
-      const reader = new Reader();
+   it("should read text from console", async (done) => {
+      let input = {};
+   //   input.read = sinon.stub().returns(Promise.resolve("something"));
+      const reader = new Reader(input);
       const stdin = require("mock-stdin").stdin();
 
       process.nextTick(() => {
           stdin.send("This is a task\n");
       });
 
-      return reader.readText("Please insert something").then( (response) => {
-          expect(response).to.equal("I'm Batman");
-          done();
-      });
+      const result = await reader.readText("Please insert something");
+      expect(result).to.equal("I'm Batman");
    });
  });
