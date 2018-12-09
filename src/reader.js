@@ -17,6 +17,16 @@ class Reader {
 
     return res;
   }
+
+  async readId (promptMessage, validNumbers) {
+      let number = -1;
+
+      do {
+        number = await this._input.read(promptMessage);
+      } while (this._validator.isNotValidId(number, validNumbers) && this._validator.isNotCancel(number));
+
+      return number;
+  }
 }
 
 module.exports = Reader;
