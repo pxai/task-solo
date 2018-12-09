@@ -14,17 +14,11 @@ describe("Reader", () => {
       const reader = new Reader();
    });
 
-   it("should read text from console", async (done) => {
+   it("should read text from console", async () => {
       let input = {};
-   //   input.read = sinon.stub().returns(Promise.resolve("something"));
+      input.read = sinon.stub().returns(Promise.resolve("something"));
       const reader = new Reader(input);
-      const stdin = require("mock-stdin").stdin();
 
-      process.nextTick(() => {
-          stdin.send("This is a task\n");
-      });
-
-      const result = await reader.readText("Please insert something");
-      expect(result).to.equal("I'm Batman");
+      expect(await reader.readText("Please insert something")).to.equal("something");
    });
  });

@@ -3,6 +3,10 @@ class Validator {
         this._cancelChar = cancelChar;
     }
 
+    notValid (result) {
+        return result.trim() === "";
+    }
+
     isEmpty (text) {
         return text.trim() === "";
     }
