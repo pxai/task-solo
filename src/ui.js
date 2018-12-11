@@ -1,8 +1,10 @@
 const Menu = require("./menu");
+const ShowHandler = require("./show_handler");
 
 class UI {
     constructor (menu) {
         this._menu = menu || new Menu();
+        this._handlers = [null, new ShowHandler()];
     }
 
     async start () {
@@ -11,7 +13,8 @@ class UI {
 
     process (command) {
         if (command !== "4") {
-//            this._menu.tryToExec(command);
+            console.log("executing: ", command);
+            this._handlers[+command].handle();
         } else {
             this._menu.menu();
         }
