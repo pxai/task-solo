@@ -2,7 +2,7 @@ const UI = require("./src/ui");
 const Console = require("./src/console");
 const Validator = require("./src/validator");
 const input = new Console();
-// const ui = new UI();
+const ui = new UI();
 
 
 function notValid (result) {
@@ -63,8 +63,8 @@ async function main () {
     input.close();
 }
 
-main();
+// main();
 // console.log("you wrote: ", answer);
 
-// ui.start();
+ ui.start();
 
