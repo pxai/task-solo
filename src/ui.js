@@ -14,7 +14,7 @@ class UI {
     process (command) {
         if (command !== "4") {
             console.log("executing: ", command);
-            this._handlers[+command].handle();
+//            this._handlers[+command].handle();
         } else {
             this._menu.menu();
         }
