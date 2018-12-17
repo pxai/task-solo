@@ -12,7 +12,7 @@ class Menu {
     }
 
     show () {
-        return this.content + "\nChoose: 1.Add | 2.Change | 3.Delete | 4.Quit\n";
+        return this.content + "\nChoose: 0.Show | 1.Add | 2.Change | 3.Delete | 4.Quit\n";
     }
 
     add () {
