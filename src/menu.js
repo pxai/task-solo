@@ -16,6 +16,7 @@ class Menu {
     }
 
     add () {
+        console.log("exec add");
         return "Please enter a task: ";
     }
 
@@ -34,7 +35,8 @@ class Menu {
     menu () {
         return new Promise((resolve) => {
             this.input.read(this.show()).then( data => {
-                if (data == "4") {
+                if (data === "4") {
+                    console.log("out");
                     resolve(0);
                     //                process.exit();
                 } else {
@@ -47,7 +49,7 @@ class Menu {
     tryToExec (command) {
         console.log(`Trying to exec: :${command}:`);
         if (this.commands[command]) {
-            console.log("executing: ", command);
+            console.log("executing:: ", command, this.commands[command]);
            this.commands[command]();
         }
 
