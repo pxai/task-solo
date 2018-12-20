@@ -21,18 +21,6 @@ describe("Menu Object", () => {
         expect(menu.show()).to.equal("This is content\nChoose: 0.Show | 1.Add | 2.Change | 3.Delete | 4.Quit\n");
     });
 
-    it("should show text to enter new", () => {
-        expect(menu.add()).to.equal("Please enter a task: ");
-    });
-
-    it("should show text to enter task number to delete", () => {
-        expect(menu.remove()).to.equal("Task number to remove: ");
-    });
-
-    it("should show text to enter task number to change", () => {
-        expect(menu.change()).to.equal("Task number to change: ");
-    });
-
     it("should say good bye", () => {
         expect(menu.bye()).to.equal("Thanks for using Task-Solo!");
     });

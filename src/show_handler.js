@@ -4,7 +4,7 @@ class ShowHandler {
   }
 
   handle () {
-    return this._tasks;
+    console.log(this._tasks);
   }
 }
 
