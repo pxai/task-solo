@@ -1,4 +1,6 @@
-class ShowHandler {
+const CommandHandler = require("./command_handler");
+
+class ShowHandler extends CommandHandler {
   constructor (tasks = []) {
     this._tasks = tasks;
   }

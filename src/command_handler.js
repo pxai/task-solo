@@ -1,7 +1,10 @@
+const Validator = require("./src/validator");
+
 class CommandHandler {
-    constructor (reader, taskList) {
+    constructor (reader, tasks) {
         this._reader = reader;
-        this._taskList = taskList;
+        this._tasks = tasks;
+        this._validator = new Validator();
     }
 }
 
