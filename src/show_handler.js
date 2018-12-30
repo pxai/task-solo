@@ -1,5 +1,5 @@
 const CommandHandler = require("./command_handler");
-const Console = require("./src/console");
+const Console = require("./console");
 
 class ShowHandler extends CommandHandler {
   constructor (input = new Console(), tasks = []) {

@@ -1,4 +1,4 @@
-const Validator = require("./src/validator");
+const Validator = require("./validator");
 
 class CommandHandler {
     constructor (reader, tasks) {
