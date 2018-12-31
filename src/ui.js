@@ -7,19 +7,16 @@ class UI {
         this._handlers = [new ShowHandler(), this.add];
     }
 
-    async start () {
-        this.process(await this._menu.menu());
+    start () {
+        console.log(this._menu.show());
     }
 
-   add () {
-       console.log("add");
-   }
-    process (command) {
+   process (command) {
         if (command !== "4") {
            console.log("executing: ", command, this._handlers[+command]);
             this._handlers[+command].handle();
         } else {
-            this._menu.menu();
+            console.log(this._menu.menu());
         }
     }
 }
