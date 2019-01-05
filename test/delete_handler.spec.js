@@ -2,21 +2,21 @@ const chai = require("chai");
 const sinon = require("sinon");
 const sinonChai = require("sinon-chai");
 const expect = chai.expect;
-const UpdateHandler = require("../src/update_handler");
+const DeleteHandler = require("../src/delete_handler");
 chai.use(sinonChai);
 
 describe("Update Handler", () => {
     it("exists a show_handler object",() => {
-        expect(UpdateHandler).to.exist;
+        expect(DeleteHandler).to.exist;
     });
 
     it("should have a constructor", () => {
-       new UpdateHandler();
+       new DeleteHandler();
     });
 
     it("should show data", () => {
-        const updateHandler = new UpdateHandler();
+        const deleteHandler = new DeleteHandler();
 
-        updateHandler.handle();
+        deleteHandler.handle();
     });
 });
